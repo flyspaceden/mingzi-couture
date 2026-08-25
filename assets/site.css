@@ -421,3 +421,51 @@ h1, h2, h3, p { margin: 0; }
   .catalog-hero h1 { font-size: 51px; }
   .watch-card button { min-height: 260px; }
 }
+
+/* Balanced display scale: gallery viewing first, detail viewing on click. */
+.hero, .hero__content { min-height: clamp(650px, 82svh, 780px); }
+.hero__product-stage { width: min(41vw, 570px); min-height: min(41vw, 570px); bottom: 3vh; }
+.hero__product-stage img { max-height: min(57vh, 530px); }
+.world-card { min-height: 560px; }
+.world-card .world-card__product { top: 12%; width: 43%; }
+.world-card .world-card__product--watch { top: 6%; width: 58%; }
+.page-hero { min-height: 460px; }
+.page-hero--brand { min-height: 480px; }
+.collection-path { min-height: 540px; }
+.collection-path .collection-path__product { top: 10%; width: 45%; }
+.collection-path .collection-path__product--watch { top: 3%; width: 60%; }
+.catalog-hero, .catalog-hero__wrap { min-height: 600px; }
+.catalog-hero__product { width: min(37vw, 480px); margin-bottom: 4%; }
+.catalog-hero__product img { max-height: 440px; }
+.catalog-hero__product--watch { width: min(35vw, 440px); }
+.product-grid, .watch-grid { justify-items: center; }
+.product-card, .watch-card { width: min(100%, 360px); }
+.watch-card button { min-height: clamp(220px, 20vw, 320px); }
+.brand-image-statement { padding: 85px 0; }
+.brand-image-statement img { width: min(100%, 460px); justify-self: center; }
+
+@media (max-width: 920px) {
+  .hero, .hero__content { min-height: clamp(630px, 80svh, 720px); }
+  .hero__product-stage { width: 47vw; }
+  .world-card { min-height: 520px; }
+  .collection-path { min-height: 510px; }
+  .catalog-hero, .catalog-hero__wrap { min-height: 570px; }
+  .catalog-hero__product { width: min(43vw, 430px); }
+}
+
+@media (max-width: 640px) {
+  .hero, .hero__content { min-height: 670px; }
+  .hero__product-stage { right: -12%; width: 76vw; }
+  .world-card { min-height: 500px; }
+  .world-card .world-card__product { top: 8%; width: 48%; }
+  .world-card .world-card__product--watch { width: 63%; }
+  .collection-path { min-height: 485px; }
+  .collection-path .collection-path__product { width: 50%; }
+  .collection-path .collection-path__product--watch { width: 66%; }
+  .catalog-hero, .catalog-hero__wrap { min-height: 560px; }
+  .catalog-hero__wrap { padding-top: 127px; }
+  .catalog-hero__product { right: -6%; bottom: 5%; width: 56vw; }
+  .catalog-hero__product--watch { right: -9%; width: 64vw; }
+  .brand-image-statement { padding: 65px 0; }
+  .brand-image-statement img { max-width: 350px; }
+}
