@@ -55,11 +55,12 @@
         const image = button.querySelector('img');
         lightboxImage.src = image.currentSrc || image.src;
         lightboxImage.alt = image.alt;
+        lightboxImage.setAttribute('style', image.getAttribute('style') || '');
         lightbox.showModal();
       });
     });
     lightbox.querySelector('.lightbox__close').addEventListener('click', () => lightbox.close());
     lightbox.addEventListener('click', event => { if (event.target === lightbox) lightbox.close(); });
-    lightbox.addEventListener('close', () => { lightboxImage.src = ''; });
+    lightbox.addEventListener('close', () => { lightboxImage.src = ''; lightboxImage.removeAttribute('style'); });
   }
 })();
